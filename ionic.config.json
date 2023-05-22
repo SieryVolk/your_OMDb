@@ -1,0 +1,7 @@
+{
+  "name": "your_OMDb",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
