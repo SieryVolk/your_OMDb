@@ -1,20 +1,66 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="black">
+    <ion-title color="danger"> <h1 align="center" style="font-size:46px">Your OMDb</h1></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="backgroundImage">
+    <h2 align="center" class="subtitle">your movie database</h2>
+  <ion-radio-group [(ngModel)]="selectedOption" (ion-changes)="handleRadioChanges()">
+    <ion-grid class="rientroHome">
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+          <ion-radio value="movie" aria-label="Custom checkbox that is checked" color="danger">MOVIES</ion-radio>
+        </ion-col>
+        <ion-col></ion-col>
+        <ion-col>
+          <ion-radio value="series" aria-label="Custom checkbox" color="danger">SERIES</ion-radio>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-radio-group>
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <!-- <ion-col>
+        <ion-button size="medium" id="open-picker" color="light">Sort by</ion-button> 
+        <ion-picker trigger="open-picker" [columns]="pickerColumns" [buttons]="pickerButtons"></ion-picker>
+      </ion-col> -->
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-searchbar [(ngModel)]="searchTerm" (input)="saveSearchTerm()" placeholder="Type the title..."></ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button color="light" routerLink="listaFilm" (click)="navigateToNextPage()" >Search</ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- <ion-list>
+    <ion-item button *ngFor="let item of movies" [routerLink]="[item.id]">
+      <ion-avatar slot="start">
+        <img [src]="imageBaseUrl + '/w92' + item.poster_path">
+      </ion-avatar>
+      <ion-label>
+        {{item.title}}
+        <p>Data di uscita: {{item.release_date | date:"yyyy"}}</p>
+      </ion-label>
+      <ion-badge slot="end" color="tertiary"> {{item.vote_average}} </ion-badge>
+    </ion-item>
+  </ion-list> -->
+
+  <!-- <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="Altri film in caricamento...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
 </ion-content>

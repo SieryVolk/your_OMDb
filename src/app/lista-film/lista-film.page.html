@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>listaFilm</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="elencoFilm">
+    <ion-item button *ngFor="let film of elencoFilm">
+      <ion-avatar slot="start">
+        <img [src]="film.Poster">
+      </ion-avatar>
+      <ion-label>
+        {{film.Title}}
+        <p>Data di uscita: {{film.Year}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+  <!-- <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="Altri film in caricamento...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
