@@ -11,11 +11,11 @@
       <ion-row>
         <ion-col></ion-col>
         <ion-col>
-          <ion-radio value="movie" aria-label="Custom checkbox that is checked" color="danger">MOVIES</ion-radio>
+          <ion-radio value="movie" aria-label="Custom checkbox that is checked" color="danger" style="color:whitesmoke">MOVIES</ion-radio>
         </ion-col>
         <ion-col></ion-col>
         <ion-col>
-          <ion-radio value="series" aria-label="Custom checkbox" color="danger">SERIES</ion-radio>
+          <ion-radio value="series" aria-label="Custom checkbox" color="danger" style="color:whitesmoke">SERIES</ion-radio>
         </ion-col>
         <ion-col></ion-col>
       </ion-row>
@@ -32,13 +32,13 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-searchbar [(ngModel)]="searchTerm" (input)="saveSearchTerm()" placeholder="Type the title..."></ion-searchbar>
+        <ion-searchbar color="dark" [(ngModel)]="searchTerm" (input)="saveSearchTerm()" placeholder="Type the title..."></ion-searchbar>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col></ion-col>
       <ion-col>
-        <ion-button color="light" routerLink="listaFilm" (click)="navigateToNextPage()" >Search</ion-button>
+        <ion-button color="dark" routerLink="listaFilm" (click)="navigateToNextPage()" >Search</ion-button>
       </ion-col>
       <ion-col></ion-col>
     </ion-row>
