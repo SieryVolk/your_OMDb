@@ -1,5 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header color="dark" [translucent]="true">
+  <ion-toolbar color="dark">
     <ion-title>La tua ricerca</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
@@ -7,9 +7,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list *ngIf="elencoFilm">
-    <ion-item button *ngFor="let film of elencoFilm">
+<ion-content >
+  <ion-list color="dark" *ngIf="elencoFilm">
+    <ion-item color="dark" button *ngFor="let film of elencoFilm">
       <ion-avatar slot="start">
         <img [src]="film.Poster">
       </ion-avatar>
